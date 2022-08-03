@@ -1,7 +1,12 @@
 /* Universal Styles */
 :root {
-  --header-color: hsl(225, 100%, 70%);
-  --body-color: hsl(210, 100%, 70%);
+  --header-color: hsl(225, 100%, 60%);
+  --header-text: hsl(110, 80%, 90%);
+  --body-color: hsl(195, 50%, 70%);
+}
+
+body {
+  background-color: var(--body-color);
 }
 
 h1 {
@@ -25,6 +30,7 @@ h3 {
 .header-link {
   text-decoration: none;
   color: black;
+  color: var(--header-text);
 }
 
 .nav-list {
@@ -36,4 +42,5 @@ h3 {
   list-style-type: none;
   text-decoration: none;
   font-size: 20px;
+  color: var(--header-text);
 }
