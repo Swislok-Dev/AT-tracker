@@ -1,15 +1,18 @@
 /* Universal Styles */
+:root {
+  --header-color: hsl(225, 100%, 70%);
+  --body-color: hsl(210, 100%, 70%);
+}
 
 h1 {
-  font-size: 32px
+  font-size: 32px;
 }
 h2 {
-  font-size: 26px
+  font-size: 26px;
 }
 h3 {
-  font-size: 22px
+  font-size: 22px;
 }
-
 
 /* Header */
 
@@ -17,6 +20,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  background-color: var(--header-color);
 }
 .header-link {
   text-decoration: none;
