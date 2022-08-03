@@ -4,26 +4,25 @@ import { NavLink } from 'react-router-dom'
 function Header() {
   return (
     <header className='header'>
-      <h2>Flight Tracker</h2>
+      <h2>
+        <NavLink to='/' className='header-link'>
+          Flight Tracker
+        </NavLink>
+      </h2>
 
       <ul className='nav-list'>
-        <li>
-          <NavLink className='nav-item' to='/'>
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className='nav-item' to='/flights'>
-            Flights
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className='nav-item' to='/airports'>
-            Airports
-          </NavLink>
-        </li>
+        <NavLink className='nav-item' to='/'>
+          Home
+        </NavLink>
+
+        <NavLink className='nav-item' to='/flights'>
+          Flights
+        </NavLink>
+
+        <NavLink className='nav-item' to='/airports'>
+          Airports
+        </NavLink>
       </ul>
-      <hr />
     </header>
   )
 }
