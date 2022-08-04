@@ -2,7 +2,7 @@
 :root {
   --header-color: hsl(225, 100%, 60%);
   --header-text: hsl(110, 80%, 90%);
-  --body-color: hsl(195, 50%, 70%);
+  --body-color: hsl(195, 40%, 80%);
 }
 
 body {
