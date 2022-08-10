@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-app.use('/flights', require('./routes/flightsRoutes'))
+app.use('/api/flights', require('./routes/flightsRoutes'))
 
 app.use(errorHandler)
 
