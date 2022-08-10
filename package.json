@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node backend/index.js",
     "server": "nodemon backend/index.js",
-    "front": "concurrently \"npm start\" \"npm start --prefix client\""
+    "client": "npm start --prefix client",
+    "front": "concurrently \"npm start\" \"npm run client\""
   },
   "author": "Cory Marker",
   "license": "MIT",
