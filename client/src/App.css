@@ -96,7 +96,7 @@ h3 {
     display: grid;
     justify-content: center;
     align-items: center;
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto 50px;
 }
 
@@ -106,6 +106,28 @@ h3 {
     grid-template-columns: repeat(2, 50%);
     border-radius: 5px;
     background-color: var(--header-color);
+    justify-items: center;
+    grid-template-areas:
+        "departure-heading arrival-heading"
+        "departure-table arrival-table"
+}
+
+.departure-heading {
+    grid-area: departure-heading;
+    color: white;
+}
+
+.arrival-heading {
+    grid-area: arrival-heading;
+    color: white;
+}
+
+.departure-table {
+    grid-area: departure-table;
+}
+
+.arrival-table {
+    grid-area: arrival-table;
 }
 
 table {
@@ -113,10 +135,6 @@ table {
     border-radius: 5px;
     padding: 10px;
     background-color: var(--header-text)
-}
-
-table thead {
-    font-weight: bold;
 }
 
 table tr td {
@@ -132,6 +150,10 @@ table tr td:nth-child(1) {
 @media screen and (max-width: 830px) {
     .flight-grid-item {
         grid-template-columns: 100%;
-
+        grid-template-areas:
+        "departure-heading"
+        "departure-table"
+        "arrival-heading"
+        "arrival-table";
     }
 }
