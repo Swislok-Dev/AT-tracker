@@ -1,42 +1,48 @@
-import React from "react";
-// import { getFlights } from "../features/flights/flightsSlice.js"
-import {
-  getInitFlights,
-  getFlights,
-} from "../features/flights/flightsSlice.js";
+import React, { useState } from "react";
+import { getFlights } from "../features/flights/flightsSlice.js";
 import { useDispatch, useSelector } from "react-redux";
 import * as functions from "../features/functions";
-import FlightsList from "../components/FlightsList"
+import FlightsList from "../components/FlightsList";
+import Spinner from "../components/Spinner";
 
 function Flights() {
   const dispatch = useDispatch();
-  const { flights } = useSelector((state) => state.flightsState);
+  const { flights, isLoading } = useSelector((state) => state.flightsState);
+  const [flightNumber, setFlightNumber] = useState("");
 
-  // eslint-disable-next-line
-  const getFlightsButton = () => {
-    dispatch(getFlights("ua4"));
-  };
-
-  const buttonPush = () => {
-    console.clear();
-    dispatch(getInitFlights());
-  };
-
-  // eslint-disable-next-line
   const listFlights = () => {
-    // console.clear();
-
     const nextFlight = functions.findNextFlight(flights);
-   return  <FlightsList nextFlight={nextFlight} />
-    // return nextFlight.ident
-
+    return <FlightsList nextFlight={nextFlight} />;
   };
+
+  const onChange = (e) => {
+    setFlightNumber(e.target.value);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    dispatch(getFlights(flightNumber));
+  };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div id="flights-page">
       <h2>Find a Flight</h2>
-      <button onClick={buttonPush}>GET Flight info</button>
-      {flights.length > 0 ? listFlights()  : "Will put flights info here"}
+      <form onSubmit={onSubmit}>
+        <input
+          type="text"
+          name="flightNumber"
+          autoFocus
+          value={flightNumber}
+          onChange={(e) => onChange(e)}
+          placeholder="Enter flight number"
+        />
+        <input type="submit" value="Find Flight" />
+      </form>
+      {flights.length > 0 ? listFlights() : "Will put flights info here"}
     </div>
   );
 }
