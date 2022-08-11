@@ -1,4 +1,5 @@
 import axios from "axios"
+import flights from "../../tests/flights.json"
 
 const API_URL = "/api/flights/"
 
@@ -8,8 +9,13 @@ export const getFlightInfo = async (flightNumber) => {
 
   return response.data
 }
+
+export const getMockFlights = async () => {
+  return flights.flights
+}
 const flightsService = {
-  getFlightInfo
+  getFlightInfo,
+  getMockFlights
 }
 
 export default flightsService
