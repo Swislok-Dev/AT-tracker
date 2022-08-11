@@ -1,46 +1,105 @@
 /* Universal Styles */
 :root {
-  --header-color: hsl(225, 100%, 60%);
-  --header-text: hsl(110, 80%, 90%);
-  --body-color: hsl(195, 40%, 80%);
+    --header-color: hsl(225, 100%, 60%);
+    --header-text: hsl(110, 80%, 90%);
+    --body-color: hsl(195, 40%, 80%);
+    --flight-item-color: hsl(255, 100%, 82%);
+}
+
+.border {
+    border: 1px solid black;
 }
 
 body {
-  background-color: var(--body-color);
+    background-color: var(--body-color);
 }
 
 h1 {
-  font-size: 32px;
+    font-size: 32px;
 }
+
 h2 {
-  font-size: 26px;
+    font-size: 26px;
 }
+
 h3 {
-  font-size: 22px;
+    font-size: 22px;
 }
 
 /* Header */
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: var(--header-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--header-color);
 }
+
 .header-link {
-  text-decoration: none;
-  color: black;
-  color: var(--header-text);
+    text-decoration: none;
+    color: black;
+    color: var(--header-text);
 }
 
 .nav-list {
-  display: flex;
-  gap: 0 15px;
+    display: flex;
+    gap: 0 15px;
 }
 
 .nav-item {
-  list-style-type: none;
-  text-decoration: none;
-  font-size: 20px;
-  color: var(--header-text);
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--header-text);
+}
+
+/* Flight Item */
+
+.flight-heading {
+    justify-self: center;
+    text-align: center;
+}
+
+.flight-item-grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    margin: 0 auto 50px;
+}
+
+.flight-grid-item {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    border-radius: 5px;
+    background-color: var(--header-color);
+}
+
+table {
+    margin: 30px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--header-text)
+}
+
+table thead {
+    font-weight: bold;
+}
+
+table tr td {
+    border-bottom: 1px solid grey;
+    padding: 10px 10px;
+    justify-self: auto;
+}
+
+table tr td:nth-child(1) {
+    border-right: 1px solid grey;
+}
+
+@media screen and (max-width: 830px) {
+    .flight-grid-item {
+        grid-template-columns: 100%;
+
+    }
 }
