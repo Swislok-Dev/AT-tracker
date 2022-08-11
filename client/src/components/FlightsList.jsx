@@ -1,4 +1,5 @@
 import React from "react";
+import FlightItem from "./FlightItem"
 
 function FlightsList(props) {
   const { nextFlight } = props;
@@ -20,24 +21,9 @@ function FlightsList(props) {
     <>
       {/*TODO: place this in a function for flight number display in sub-header*/}
       {props.nextFlight.ident}
-      <ul className="flight-details">
-        <li>Flight Number: {ident_iata}</li>
-        <li>Tail Number: {registration}</li>
-        <li>Aircraft Type: {aircraft_type}</li>
+      <br/>
+      <FlightItem nextFlight={nextFlight} />
 
-        <li>Scheduled takeoff: {nextFlight.scheduled_off}</li>
-        <li>Scheduled arrival: {nextFlight.scheduled_on}</li>
-
-        <li>Origin: {origin.code_iata} </li>
-        <li>Destination: {destination.code}</li>
-
-        <li>Progress: {progress_percent}%</li>
-        <li>Flight Status: {status}</li>
-        <li>Gate Origin: {gate_origin}</li>
-        <li>Terminal Origin: {terminal_origin}</li>
-        <li>Gate Destination: {gate_destination}</li>
-        <li>Gate Terminal: {terminal_destination}</li>
-      </ul>
     </>
   );
 }
