@@ -69,7 +69,6 @@ h3 {
 
 .header-link {
     text-decoration: none;
-    color: black;
     color: var(--header-text);
 }
 
@@ -110,6 +109,17 @@ h3 {
     grid-template-areas:
         "departure-heading arrival-heading"
         "departure-table arrival-table"
+}
+
+.flight-status {
+    background-color: #59ea59;
+    padding: 5px 50px;
+    border-radius: 10px;
+}
+
+.flight-status span {
+    position: relative;
+    top: 10px;
 }
 
 .departure-heading {
