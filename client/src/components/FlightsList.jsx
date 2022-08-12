@@ -3,19 +3,6 @@ import FlightItem from "./FlightItem"
 
 function FlightsList(props) {
   const { nextFlight } = props;
-  const {
-    ident_iata,
-    registration,
-    origin,
-    destination,
-    progress_percent,
-    status,
-    aircraft_type,
-    gate_origin,
-    gate_destination,
-    terminal_origin,
-    terminal_destination,
-  } = nextFlight;
 
   return (
     <>
