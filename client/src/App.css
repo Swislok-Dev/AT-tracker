@@ -115,11 +115,13 @@ h3 {
 .departure-heading {
     grid-area: departure-heading;
     color: white;
+    padding-top: 20px;
 }
 
 .arrival-heading {
     grid-area: arrival-heading;
     color: white;
+    padding-top: 20px;
 }
 
 .departure-table {
@@ -155,5 +157,9 @@ table tr td:nth-child(1) {
         "departure-table"
         "arrival-heading"
         "arrival-table";
+    }
+
+    .arrival-heading {
+        padding: 0;
     }
 }
