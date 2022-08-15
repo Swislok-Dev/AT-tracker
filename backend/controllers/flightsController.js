@@ -2,10 +2,12 @@ const asyncHandler = require('express-async-handler')
 const axios = require('axios')
 require('dotenv').config()
 
+const aeroapiURI = "https://aeroapi.flightaware.com/aeroapi/"
+
 const getFlightInfo = (req, res) => {
   const ident = req.params.ident.toUpperCase()
   axios
-    .get(process.env.aeroapiURI + 'flights/' + ident, {
+    .get(aeroapiURI + 'flights/' + ident, {
       headers: {
         Accept: 'application/json; charset=UTF-8',
         'x-apikey': process.env.aeroapiKey,
