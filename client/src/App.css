@@ -10,8 +10,9 @@
     border: 1px solid black;
 }
 
-body {
+html {
     background-color: var(--body-color);
+    height: 100%;
 }
 
 h1 {

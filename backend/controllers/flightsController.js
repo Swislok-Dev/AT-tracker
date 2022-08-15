@@ -1,26 +1,26 @@
-const asyncHandler = require('express-async-handler')
-const axios = require('axios')
-require('dotenv').config()
+const asyncHandler = require("express-async-handler");
+const axios = require("axios");
+require("dotenv").config();
 
-const aeroapiURI = "https://aeroapi.flightaware.com/aeroapi/"
+const aeroapiURI = "https://aeroapi.flightaware.com/aeroapi/";
 
 const getFlightInfo = (req, res) => {
-  const ident = req.params.ident.toUpperCase()
+  const ident = req.params.ident.toUpperCase();
   axios
-    .get(aeroapiURI + 'flights/' + ident, {
+    .get(aeroapiURI + "flights/" + ident, {
       headers: {
-        Accept: 'application/json; charset=UTF-8',
-        'x-apikey': process.env.aeroapiKey,
+        Accept: "application/json; charset=UTF-8",
+        "x-apikey": process.env.aeroapiKey,
       },
     })
     .then((resp) => {
-      res.status(200).send(resp.data['flights'])
+      res.status(200).send(resp.data["flights"]);
     })
     .catch(() => {
-      res.status(400).send({ message: 'The flight number is invalid' })
-    })
-}
+      res.status(400).send({ message: "The flight number is invalid" });
+    });
+};
 
 module.exports = {
   getFlightInfo,
-}
+};
