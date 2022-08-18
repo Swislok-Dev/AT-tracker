@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function FlightItem({ nextFlight, flightNumber }) {
-
   const convertDate = (date) => {
     if (date) {
       const toDateString = new Date(date);
@@ -11,7 +10,7 @@ export default function FlightItem({ nextFlight, flightNumber }) {
   };
 
   const displayFlightNumber = (flightNumber) => {
-    return flightNumber.toUpperCase()
+    return flightNumber.toUpperCase();
   };
 
   const placeDate = () => {
@@ -39,16 +38,16 @@ export default function FlightItem({ nextFlight, flightNumber }) {
           <table className="departure-table">
             <tbody>
               <tr>
-                <td>Airport</td>
-                <td>{nextFlight.origin.code_iata}</td>
-              </tr>
-              <tr>
                 <td>Scheduled Takeoff</td>
                 <td>{convertDate(nextFlight.scheduled_off)}</td>
               </tr>
               <tr>
                 <td>Actual Takeoff</td>
                 <td>{convertDate(nextFlight.actual_off)}</td>
+              </tr>
+              <tr>
+                <td>Airport</td>
+                <td>{nextFlight.origin.code_iata}</td>
               </tr>
               <tr>
                 <td>Terminal</td>
@@ -63,21 +62,24 @@ export default function FlightItem({ nextFlight, flightNumber }) {
 
           <table className="arrival-table">
             <tbody>
-              <tr>
-                <td>Airport</td>
-                <td>{nextFlight.destination.code_iata}</td>
-              </tr>
-              <tr>
-                <td>Scheduled Arrival</td>
-                <td>{convertDate(nextFlight.scheduled_on)}</td>
-              </tr>
-              <tr>
-                <td>Estimated Arrival</td>
-                <td>{convertDate(nextFlight.estimated_on)}</td>
-              </tr>
+              {nextFlight.scheduled_on == nextFlight.estimated_on ? (
+                <tr>
+                  <td>Scheduled Arrival</td>
+                  <td>{convertDate(nextFlight.scheduled_on)}</td>
+                </tr>
+              ) : (
+                <tr>
+                  <td>Estimated Arrival</td>
+                  <td>{convertDate(nextFlight.estimated_on)}</td>
+                </tr>
+              )}
               <tr>
                 <td>Actual Arrival</td>
                 <td>{convertDate(nextFlight.actual_on)}</td>
+              </tr>
+              <tr>
+                <td>Airport</td>
+                <td>{nextFlight.destination.code_iata}</td>
               </tr>
               <tr>
                 <td>Terminal</td>
