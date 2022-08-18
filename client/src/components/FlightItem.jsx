@@ -1,7 +1,6 @@
 import React from "react";
 
-export default function FlightItem(props) {
-  const { nextFlight } = props;
+export default function FlightItem({ nextFlight, flightNumber }) {
 
   const convertDate = (date) => {
     if (date) {
@@ -9,6 +8,10 @@ export default function FlightItem(props) {
       const newDate = toDateString.toUTCString().split("GMT")[0];
       return newDate;
     }
+  };
+
+  const displayFlightNumber = (flightNumber) => {
+    return flightNumber.toUpperCase()
   };
 
   const placeDate = () => {
@@ -23,7 +26,7 @@ export default function FlightItem(props) {
           <h2>
             Flight
             <br />
-            {nextFlight.ident_iata}
+            {displayFlightNumber(flightNumber)}
           </h2>
 
           <h3>{nextFlight.status}</h3>
