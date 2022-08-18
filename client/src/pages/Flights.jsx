@@ -12,7 +12,7 @@ function Flights() {
 
   const listFlights = () => {
     const nextFlight = functions.findNextFlight(flights);
-    return <FlightsList nextFlight={nextFlight} />;
+    return <FlightsList nextFlight={nextFlight} flightNumber={flightNumber} />;
   };
 
   const onChange = (e) => {
