@@ -29,9 +29,8 @@ function Flights() {
   }
 
   return (
-    <div id="flights-page">
-      <h2>Find a Flight</h2>
-      <form onSubmit={onSubmit}>
+    <section id="flights-page">
+      <form id="flight-search" onSubmit={onSubmit}>
         <input
           type="text"
           name="flightNumber"
@@ -42,8 +41,11 @@ function Flights() {
         />
         <input type="submit" value="Find Flight" />
       </form>
-      {flights.length > 0 ? listFlights() : "Will put flights info here"}
-    </div>
+      <div className="info-text">
+        {flights.length <= 0 ? <h2>Find a Flight</h2> : null}
+      </div>
+      {flights.length > 0 ? listFlights() : null}
+    </section>
   );
 }
 
