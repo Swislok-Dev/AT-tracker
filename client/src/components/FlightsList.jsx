@@ -2,12 +2,12 @@ import React from "react";
 import FlightItem from "./FlightItem"
 
 function FlightsList(props) {
-  const { nextFlight } = props;
+    console.log("props from FlightsList:" ,props)
 
   return (
     <>
       <br/>
-      <FlightItem nextFlight={nextFlight} />
+      <FlightItem nextFlight={props.nextFlight} flightNumber={props.flightNumber} />
 
     </>
   );
