@@ -10,19 +10,6 @@ function Header() {
         </NavLink>
       </h1>
 
-      <ul className='nav-list'>
-        <NavLink className='nav-item' to='/'>
-          Home
-        </NavLink>
-
-        <NavLink className='nav-item' to='/flights'>
-          Flights
-        </NavLink>
-
-        <NavLink className='nav-item' to='/airports'>
-          Airports
-        </NavLink>
-      </ul>
     </header>
   )
 }
