@@ -85,6 +85,18 @@ h3 {
     color: var(--header-text);
 }
 
+/* Flight Page */
+
+#flight-search {
+    text-align: center;
+    margin: 20px;
+}
+
+.info-text {
+    text-align: center;
+    margin: 10px;
+}
+
 /* Flight Item */
 
 .flight-heading {
